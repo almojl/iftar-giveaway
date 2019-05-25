@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retal</title>
+    <link rel="stylesheet" href="site.css" />
+    <link rel="stylesheet" href="bootstrap.css" />
+  </head>
+  <body>
+    <div class="container body-content" dir="rtl">
+      <img src="logo-w-bg.png" class="img" height="100" />
+      <div class="text-align-center">
+        <h3 class="">
+          السحب على الجوائز
+        </h3>
+        <div class="current-winner-number-wrapper">
+          <span id="pre-number-text"></span>
+          <h1 id="winner" lang="en" class="current-winner-number"></h1>
+        </div>
+        <div>
+          <button
+            id="draw-btn"
+            class="btn btn-success bg-primary"
+            onclick="pickWinner()"
+          >
+            الفائز الأول
+          </button>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-xs-6 table-wrapper">
+          <table class="table">
+            <thead>
+              <th style="text-align:right;">ترتيب الفوز</th>
+              <th style="text-align:right;">رقم الفائز</th>
+            </thead>
+            <tbody id="win-history"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="jquery-3.4.1.js"></script>
+    <script>
+      let min = 1000;
+      let max = 1200;
+      let winCounter = 0;
+
+      function pickWinner() {
+        winCounter++;
+        let newWinner = min + Math.floor(Math.random() * (max - min + 1));
+        $("#winner").html(newWinner);
+        $("#win-history").prepend(
+          "<tr><td>" + winCounter + "</td><td>" + newWinner + "</td></tr>"
+        );
+        $("#draw-btn").html("الفائز التالي");
+        $("#pre-number-text").html("مبروك للفائز رقم");
+        $(".table-wrapper").css("display", "flex");
+      }
+    </script>
+  </body>
+</html>
