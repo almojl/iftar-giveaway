@@ -9,6 +9,9 @@
   </head>
   <body>
     <div class="container body-content" dir="rtl">
+      <div id="overlay" onclick="off()" style="text-align:center">
+        <img src="projector-design.jpg" width="80%" class="splash" />
+      </div>
       <img src="logo-w-bg.png" class="img" height="100" />
       <div class="text-align-center">
         <h3 class="">
@@ -58,6 +61,14 @@
         $("#draw-btn").html("الفائز التالي");
         $("#pre-number-text").html("مبروك للفائز رقم");
         $(".table-wrapper").css("display", "flex");
+      }
+
+      function on() {
+        document.getElementById("overlay").style.display = "block";
+      }
+
+      function off() {
+        document.getElementById("overlay").style.display = "none";
       }
     </script>
   </body>
