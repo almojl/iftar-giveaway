@@ -49,12 +49,12 @@ textarea {
 
 @font-face {
   font-family: "noor";
-  src: url("Noor-light.ttf") format("truetype");
+  src: url("noor-light.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "klavika";
-  src: url("Klavika-regular.otf");
+  src: url("klavika-regular.otf");
 }
 
 *[lang="ar"],
